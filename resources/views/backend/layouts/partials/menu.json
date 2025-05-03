@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Tổng quan",
+        "icon": "fas fa-chart-line",
+        "route": "admin.dashboard",
+        "id": "relationship"
+    },
+    {
+        "title": "Đối tác",
+        "icon": "fas fa-handshake",
+        "route": "admin.relationship.index",
+        "id": "relationship"
+    },
+    {
+        "title": "Liên hệ",
+        "icon": "fas fa-comments",
+        "route": "admin.contact",
+        "id": "relationship"
+    }
+
+
+]
