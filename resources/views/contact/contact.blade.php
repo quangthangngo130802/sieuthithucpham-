@@ -40,153 +40,153 @@
     </style>
 </head>
 
-<body class="form_page">
-    <div class="container mt-4 card">
-        <div class="row">
-            <!-- Cột trái -->
-            <div class="col-md-7 mb-4">
-                <div class="">
-                    <div class="card-body">
-                        <table class="table">
-                            <div class="card-body">
-
-                                <table class="table">
-                                    <tbody>
-                                        @foreach ($relationships as $index => $item)
-                                            @if ($index % 4 == 0)
-                                                <tr
-                                                    class="{{ $loop->last || $loop->remaining <= 4 ? '' : 'border-bottom' }}">
-                                            @endif
-
-                                            <td class="text-center px-3 {{ $index % 4 != 3 ? 'border-end' : '' }}">
-                                                <img src="{{ asset('storage/' . $item->image) }}" class="img-fluid"
-                                                    style="width: 100%; height: 60px; object-fit: cover;"
-                                                    alt="Ảnh {{ $index + 1 }}">
-                                            </td>
-
-                                            @if ($index % 4 == 3 || $loop->last)
-                                                </tr>
-                                            @endif
-                                        @endforeach
-
-
-
-                                </table>
-                            </div>
-                    </div>
-                </div>
-
-                <!-- Cột phải -->
-                <div class="col-md-5 mb-4">
-                    <div class="h-100">
+<body class="form_page ">
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="container mt-4 card ">
+            <div class="row">
+                <!-- Cột trái -->
+                <div class="col-md-7 mb-4">
+                    <div class="">
                         <div class="card-body">
-                            <div class="text-center mb-3">
-                                <h3>Thông tin liên hệ</h3>
-                            </div>
+                            <table class="table">
+                                <div class="card-body">
 
-                            <form method="POST" id="form-login" action="{{ route('partner.submit') }}">
-                                @csrf
+                                    <table class="table">
+                                        <tbody>
+                                            @foreach ($relationships as $index => $item)
+                                                @if ($index % 4 == 0)
+                                                    <tr
+                                                        class="{{ $loop->last || $loop->remaining <= 4 ? '' : 'border-bottom' }}">
+                                                @endif
 
-                                <div class="mb-3">
-                                    <input type="text" name="fullname" class="form-control" placeholder="Họ và tên"
-                                        autocomplete="off">
-                                    <div class="text-danger mt-1 error-fullname"></div>
+                                                <td class="text-center px-3 {{ $index % 4 != 3 ? 'border-end' : '' }}">
+                                                    <img src="{{ asset('storage/' . $item->image) }}" class="img-fluid"
+                                                        style="width: 120px; height: 60px; object-fit: cover;"
+                                                        alt="Ảnh {{ $index + 1 }}">
+                                                </td>
+
+                                                @if ($index % 4 == 3 || $loop->last)
+                                                    </tr>
+                                                @endif
+                                            @endforeach
+
+                                    </table>
                                 </div>
-                                <div class="mb-3">
-                                    <input type="email" name="email" class="form-control"
-                                        placeholder="Địa chỉ Email" autocomplete="off">
-                                    <div class="text-danger mt-1 error-email"></div>
+                        </div>
+                    </div>
+
+                    <!-- Cột phải -->
+                    <div class="col-md-5 mb-4">
+                        <div class="h-100">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <h3>Thông tin liên hệ</h3>
                                 </div>
-                                <div class="mb-3">
-                                    <input type="text" name="phone" class="form-control"
-                                        placeholder="Số điện thoại" autocomplete="off">
-                                    <div class="text-danger mt-1 error-phone"></div>
-                                </div>
-                                <div class="mb-3">
-                                    <textarea name="message" class="form-control" rows="3" placeholder="Lời nhắn"></textarea>
-                                    <div class="text-danger mt-1 error-message"></div>
-                                </div>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary">Liên hệ</button>
-                                </div>
-                            </form>
+
+                                <form method="POST" id="form-login" action="{{ route('partner.submit') }}">
+                                    @csrf
+
+                                    <div class="mb-3">
+                                        <input type="text" name="fullname" class="form-control"
+                                            placeholder="Họ và tên" autocomplete="off">
+                                        <div class="text-danger mt-1 error-fullname"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" name="email" class="form-control"
+                                            placeholder="Địa chỉ Email" autocomplete="off">
+                                        <div class="text-danger mt-1 error-email"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" name="phone" class="form-control"
+                                            placeholder="Số điện thoại" autocomplete="off">
+                                        <div class="text-danger mt-1 error-phone"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea name="message" class="form-control" rows="6" placeholder="Lời nhắn"></textarea>
+                                        <div class="text-danger mt-1 error-message"></div>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">Liên hệ</button>
+                                    </div>
+                                </form>
 
 
-                            <div class="text-end mt-3" style="display: none;">
-                                <a href="#" class="btn btn-link">Tạo tài khoản</a>
-                                <a href="#" class="btn btn-link">Quên mật khẩu?</a>
+                                <div class="text-end mt-3" style="display: none;">
+                                    <a href="#" class="btn btn-link">Tạo tài khoản</a>
+                                    <a href="#" class="btn btn-link">Quên mật khẩu?</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!-- Toastr -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-        @if (session('success'))
-            <script>
-                $(document).ready(function() {
-                    toastr.success("{{ session('success') }}", "Thông báo");
-                });
-            </script>
-        @endif
-
-
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Toastr -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    @if (session('success'))
         <script>
-            document.getElementById('form-login').addEventListener('submit', function(e) {
-                e.preventDefault(); // Chặn submit mặc định
-
-                // Xoá hết lỗi cũ
-                document.querySelectorAll('.text-danger').forEach(el => el.textContent = '');
-
-                let hasError = false;
-
-                const fullname = this.fullname.value.trim();
-                const email = this.email.value.trim();
-                const phone = this.phone.value.trim();
-                const message = this.message.value.trim();
-
-                // Kiểm tra họ tên
-                if (!fullname) {
-                    document.querySelector('.error-fullname').textContent = 'Vui lòng nhập họ và tên.';
-                    hasError = true;
-                }
-
-                // Kiểm tra email
-                if (!hasError && !email) {
-                    document.querySelector('.error-email').textContent = 'Vui lòng nhập email.';
-                    hasError = true;
-                } else if (!hasError && !/^\S+@\S+\.\S+$/.test(email)) {
-                    document.querySelector('.error-email').textContent = 'Email không hợp lệ.';
-                    hasError = true;
-                }
-
-                // Kiểm tra số điện thoại
-                if (!hasError && !phone) {
-                    document.querySelector('.error-phone').textContent = 'Vui lòng nhập số điện thoại.';
-                    hasError = true;
-                } else if (!hasError && !/^\d{9,11}$/.test(phone)) {
-                    document.querySelector('.error-phone').textContent = 'Số điện thoại không hợp lệ.';
-                    hasError = true;
-                }
-
-                // Kiểm tra lời nhắn
-                if (!hasError && !message) {
-                    document.querySelector('.error-message').textContent = 'Vui lòng nhập lời nhắn.';
-                    hasError = true;
-                }
-
-                // Nếu không có lỗi, submit form
-                if (!hasError) {
-                    this.submit();
-                }
+            $(document).ready(function() {
+                toastr.success("{{ session('success') }}", "Thông báo");
             });
         </script>
+    @endif
+
+
+    <script>
+        document.getElementById('form-login').addEventListener('submit', function(e) {
+            e.preventDefault(); // Chặn submit mặc định
+
+            // Xoá hết lỗi cũ
+            document.querySelectorAll('.text-danger').forEach(el => el.textContent = '');
+
+            let hasError = false;
+
+            const fullname = this.fullname.value.trim();
+            const email = this.email.value.trim();
+            const phone = this.phone.value.trim();
+            const message = this.message.value.trim();
+
+            // Kiểm tra họ tên
+            if (!fullname) {
+                document.querySelector('.error-fullname').textContent = 'Vui lòng nhập họ và tên.';
+                hasError = true;
+            }
+
+            // Kiểm tra email
+            if (!hasError && !email) {
+                document.querySelector('.error-email').textContent = 'Vui lòng nhập email.';
+                hasError = true;
+            } else if (!hasError && !/^\S+@\S+\.\S+$/.test(email)) {
+                document.querySelector('.error-email').textContent = 'Email không hợp lệ.';
+                hasError = true;
+            }
+
+            // Kiểm tra số điện thoại
+            if (!hasError && !phone) {
+                document.querySelector('.error-phone').textContent = 'Vui lòng nhập số điện thoại.';
+                hasError = true;
+            } else if (!hasError && !/^\d{9,11}$/.test(phone)) {
+                document.querySelector('.error-phone').textContent = 'Số điện thoại không hợp lệ.';
+                hasError = true;
+            }
+
+            // Kiểm tra lời nhắn
+            if (!hasError && !message) {
+                document.querySelector('.error-message').textContent = 'Vui lòng nhập lời nhắn.';
+                hasError = true;
+            }
+
+            // Nếu không có lỗi, submit form
+            if (!hasError) {
+                this.submit();
+            }
+        });
+    </script>
 </body>
 
 
